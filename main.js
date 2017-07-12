@@ -93,15 +93,15 @@ let formData = [
 //   console.log( first.label );
 // } )();
 
-// let first = formData[0];
-// let second = formData[1];
-// let third = formData[2];
-// let fourth = formData[3];
-// let fifth = formData[4];
-// let sixth = formData[5];
-// let seventh = formData[6];
-// let eighth = formData[7];
-//
+let first = formData[0];
+let second = formData[1];
+let third = formData[2];
+let fourth = formData[3];
+let fifth = formData[4];
+let sixth = formData[5];
+let seventh = formData[6];
+let eighth = formData[7];
+
 // let objectSelect = [first, second, third, fourth, fifth, sixth, seventh, eighth]
 
 // -------- Your Code Goes Below this Line --------
@@ -116,18 +116,28 @@ let formData = [
 for (let i = 0; i < 8; i++) {
   let formFields = document.getElementsByClassName('fields');
   let textInput = document.createElement('input');
-  let textInputValue = document.getElementsByTagName('input')
+  let selectType = document.createElement('select');
+  let textInputValue = document.getElementsByTagName('input');
   let inputType = textInputValue.type = formData[i]['type'];
   let inputID = textInputValue.id = formData[i]['id']
   let inputPlaceholder = textInputValue.placeholder = (formData[i]["label"])
 
 
+    if (formData[i] === 4){
+      fields.appendChild(selectType);
+      selectType.setAttribute("type", inputType);
+      selectType.setAttribute("id", inputID);
+      selectType.setAttribute("placeholder", inputPlaceholder)
+    } else {
+
     fields.appendChild(textInput);
     textInput.setAttribute("type", inputType);
     textInput.setAttribute("id", inputID);
     textInput.setAttribute("placeholder", inputPlaceholder)
-
+}
 };
+
+document.getElementsByTagName("button")
 // if
 // for (let i=0; i<8; i++){
 //
