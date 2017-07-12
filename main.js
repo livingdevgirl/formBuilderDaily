@@ -93,16 +93,6 @@ let formData = [
 //   console.log( first.label );
 // } )();
 //
-// let first = formData[0];
-// let second = formData[1];
-// let third = formData[2];
-// let fourth = formData[3];
-// let fifth = formData[4];
-// let sixth = formData[5];
-// let seventh = formData[6];
-// let eighth = formData[7];
-
-// let objectSelect = [first, second, third, fourth, fifth, sixth, seventh, eighth]
 
 // -------- Your Code Goes Below this Line --------
 // function findPlaceHolder{
@@ -113,45 +103,38 @@ let formData = [
 
 
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < formData.length; i++) {
+  console.log("hello");
   let formFields = document.getElementsByClassName('fields');
   let textInput = document.createElement('input');
-  let selectType = document.createElement('select');
-  let textInputValue = document.getElementsByTagName('input');
-  let inputType = textInputValue.type = formData[i]['type'];
-  let inputID = textInputValue.id = formData[i]['id'];
-  let inputPlaceholder = textInputValue.placeholder = (formData[i]["label"])
+  let selectInput = document.createElement('select');
+  let textArea = document.createElement('textArea');
+  let inputType = formData[i]['type'];
+  let inputID = formData[i]['id'];
+  let inputPlaceholder = (formData[i]["label"]);
 
+  if (formData[i]['type'] === 'select') {
+    fields.appendChild(selectInput);
+    selectInput.setAttribute("id", inputID);
+    let optionsList = formData[i].options;
+    for(let i=0; i<optionsList.length; i++){
+      let newOption = document.createElement("option");
+      selectInput.appendChild(newOption);
+      newOption.setAttribute("value",optionsList[i]['value']);
+      newOption.text = optionsList[i]['label'];
+    }
 
-    if (formData[i]['type'] === formData[i]['select'] ){
-      for (let x = 0; x <formData.length; x++){
-      let optionsList = textInputValue.type = formData[i].options[x]['type'];
-      fields.appendChild(selectType);
-      selectType.appendChild(optionsList)
-      selectType.setAttribute("type", inputType);
-      selectType.setAttribute("id", inputID);
-      selectType.setAttribute("placeholder", inputPlaceholder)
-    }if (formData[i]['type'] === formData[i]['textarea'] ) {
-
-    } else {
+  } else if (formData[i]['type'] === 'textarea') {
+      fields.appendChild(textArea)
+      textArea.setAttribute("type", inputType);
+      textArea.setAttribute("id", inputID);
+      textArea.setAttribute("placeholder", inputPlaceholder)
+    console.log("is this happening")
+  } else {
 
     fields.appendChild(textInput);
     textInput.setAttribute("type", inputType);
     textInput.setAttribute("id", inputID);
     textInput.setAttribute("placeholder", inputPlaceholder)
-}
+  }
 };
-}
-// if
-// for (let i=0; i<8; i++){
-//
-//   let textInputValue = document.getElementsByTagName('input')
-//   textInputValue.setAttribute("select", optionsSelectors)
-// }
-
-
-
-
-
-// formFields.appendChild(textInput);
-// let textInputValue = (input type=first.type id=first.id placeholder=first.label)
