@@ -118,19 +118,20 @@ for (let i = 0; i < 8; i++) {
   let textInput = document.createElement('input');
   let selectType = document.createElement('select');
   let textInputValue = document.getElementsByTagName('input');
-  let selectInput = selectType.type = formData[i].options[i]['value'];
   let inputType = textInputValue.type = formData[i]['type'];
   let inputID = textInputValue.id = formData[i]['id'];
   let inputPlaceholder = textInputValue.placeholder = (formData[i]["label"])
 
 
     if (formData[i]['type'] === formData[i]['select'] ){
+      for (let x = 0; x <formData.length; x++){
+      let optionsList = textInputValue.type = formData[i].options[x]['type'];
       fields.appendChild(selectType);
       selectType.appendChild(optionsList)
       selectType.setAttribute("type", inputType);
       selectType.setAttribute("id", inputID);
       selectType.setAttribute("placeholder", inputPlaceholder)
-    } else {
+    } 
 
     fields.appendChild(textInput);
     textInput.setAttribute("type", inputType);
