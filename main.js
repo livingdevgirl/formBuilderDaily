@@ -92,15 +92,15 @@ let formData = [
 //   // Log the string "First Name"
 //   console.log( first.label );
 // } )();
-
-let first = formData[0];
-let second = formData[1];
-let third = formData[2];
-let fourth = formData[3];
-let fifth = formData[4];
-let sixth = formData[5];
-let seventh = formData[6];
-let eighth = formData[7];
+//
+// let first = formData[0];
+// let second = formData[1];
+// let third = formData[2];
+// let fourth = formData[3];
+// let fifth = formData[4];
+// let sixth = formData[5];
+// let seventh = formData[6];
+// let eighth = formData[7];
 
 // let objectSelect = [first, second, third, fourth, fifth, sixth, seventh, eighth]
 
@@ -131,7 +131,9 @@ for (let i = 0; i < 8; i++) {
       selectType.setAttribute("type", inputType);
       selectType.setAttribute("id", inputID);
       selectType.setAttribute("placeholder", inputPlaceholder)
-    } 
+    }if (formData[i]['type'] === formData[i]['textarea'] ) {
+
+    } else {
 
     fields.appendChild(textInput);
     textInput.setAttribute("type", inputType);
@@ -139,8 +141,7 @@ for (let i = 0; i < 8; i++) {
     textInput.setAttribute("placeholder", inputPlaceholder)
 }
 };
-
-document.getElementsByTagName("button")
+}
 // if
 // for (let i=0; i<8; i++){
 //
